@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+body {
+  min-height: 100vh;
+  background-color: #101010;
+  display: flex;
+}
+
+main {
+  padding: 20px;
+}
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #000000;
+  height: 100vh;
+  border-radius: 0px 0px 18px;
+  padding: 12px;
+  width: 235px;
+  min-width: 235px;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+#user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  margin-top: 20px;
+}
+
+#user_avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: center;
+}
+
+#user_info {
+  display: flex;
+  flex-direction: column;
+  color: #eeeeee;
+}
+
+#user_info p:last-child {
+  color: #be2a00;
+  font-size: 12px;
+}
+
+#side-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+}
+
+.side-item {
+  border-radius: 8px;
+  padding: 14px;
+  cursor: pointer;
+}
+
+.side-item.active {
+  background-color: #ff310060;
+}
+
+.side-item:hover:not(.active),
+#logout_btn:hover {
+  background-color: #101010;
+}
+
+.side-item a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #bbbcbe;
+}
+
+.side-item.active a {
+  color: #f24405;
+}
+
+.side-item a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+#logout {
+  border-top: 1px solid #bbbcbe;
+  padding: 12px;
+}
+
+#logout_btn {
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  justify-content: center;
+  color: #bbbcbe;
+}
