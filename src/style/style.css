@@ -14,7 +14,9 @@ body {
 }
 
 main {
+  flex: 1;
   padding: 20px;
+  margin-left: 245px;
 }
 
 #sidebar {
@@ -30,6 +32,7 @@ main {
   position: fixed;
   left: 0;
   top: 0;
+  border-right: 1px solid #353536;
 }
 
 #user {
@@ -122,4 +125,59 @@ main {
   background-color: transparent;
   justify-content: center;
   color: #bbbcbe;
+}
+
+main > section > h1 {
+  color: #ffffff;
+  font-size: 26px;
+  margin-top: 12px;
+}
+
+main > section > p {
+  color: #3f3f41;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#cabecalho {
+  border-bottom: 0.5px solid #353536;
+}
+
+#card {
+  background-color: #000000;
+  margin-top: 25px;
+  height: 150px;
+  border-radius: 20px;
+  display: flex;
+}
+
+#cabecalho-card-saldo {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  gap: 10px;
+}
+
+#cabecalho-card-saldo > i {
+  color: #be2a00;
+  margin-left: 40px;
+  display: flex;
+}
+
+#cabecalho-card-saldo > h1 {
+  color: #353536;
+  font-size: 20px;
+  display: flex;
+}
+
+#info-card-saldo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+  margin-left: -144px;
+}
+
+#info-card-saldo > h3 {
+  font-size: 40px;
 }
