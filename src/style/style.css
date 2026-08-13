@@ -9,7 +9,7 @@
 
 body {
   min-height: 100vh;
-  background-color: #101010;
+  background-color: #0a0a0a;
   display: flex;
 }
 
@@ -23,7 +23,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #000000;
+  background-color: #131313;
   height: 100vh;
   border-radius: 0px 0px 18px;
   padding: 12px;
@@ -32,7 +32,7 @@ main {
   position: fixed;
   left: 0;
   top: 0;
-  border-right: 1px solid #353536;
+  border-right: 1px solid #262626;
 }
 
 #user {
@@ -140,15 +140,35 @@ main > section > p {
 }
 
 #cabecalho {
-  border-bottom: 0.5px solid #353536;
+  border-bottom: 0.5px solid #262626;
 }
 
 #card {
-  background-color: #000000;
+  background-color: #161616;
   margin-top: 25px;
   height: 150px;
   border-radius: 20px;
   display: flex;
+  border: 1px solid #262626;
+  position: relative;
+  overflow: hidden;
+}
+
+#card::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -30px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 49, 0, 0.35) 0%,
+    transparent 70%
+  );
+  filter: blur(12px);
+  pointer-events: none;
+  z-index: 0;
 }
 
 #cabecalho-card-saldo {
@@ -156,12 +176,15 @@ main > section > p {
   height: 60px;
   align-items: center;
   gap: 10px;
+  text-transform: uppercase;
+  margin-top: 10px;
 }
 
 #cabecalho-card-saldo > i {
   color: #be2a00;
   margin-left: 40px;
   display: flex;
+  font-size: 22px;
 }
 
 #cabecalho-card-saldo > h1 {
@@ -175,9 +198,126 @@ main > section > p {
   flex-direction: column;
   justify-content: center;
   color: #ffffff;
-  margin-left: -144px;
+  margin-left: -150px;
+  margin-top: 20px;
 }
 
 #info-card-saldo > h3 {
   font-size: 40px;
+}
+
+#cards-resumo {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 40px;
+}
+
+#card-receita {
+  width: 400px;
+  height: 180px;
+  border-radius: 20px;
+  background-color: #161616;
+  border: 1px solid #262626;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+#card-receita::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -30px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(
+    circle,
+    rgba(61, 220, 132, 0.14) 0%,
+    transparent 70%
+  );
+  filter: blur(12px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#cabecalho-card-receita {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-left: 25px;
+  font-size: 14px;
+  color: #353536;
+}
+
+#cabecalho-card-receita > i {
+  font-size: 20px;
+  color: #3ddc84;
+}
+
+#info-card-receita {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+  align-items: center;
+  font-size: 30px;
+}
+
+#card-despesa {
+  width: 400px;
+  height: 180px;
+  border-radius: 20px;
+  background-color: #161616;
+  border: 1px solid #262626;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+#card-despesa::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -30px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 77, 77, 0.35) 0%,
+    transparent 70%
+  );
+  filter: blur(12px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#cabecalho-card-despesa {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-left: 25px;
+  font-size: 14px;
+  color: #353536;
+}
+
+#cabecalho-card-despesa > i {
+  font-size: 20px;
+  color: #ff4d4d;
+}
+
+#info-card-despesa {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
+  align-items: center;
+  font-size: 30px;
 }
