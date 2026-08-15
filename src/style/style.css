@@ -321,3 +321,36 @@ main > section > p {
   align-items: center;
   font-size: 30px;
 }
+
+#btn-receita-despesa {
+  margin-top: 50px;
+  gap: 20px;
+  display: flex;
+}
+
+#btn-receita {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #3ddc84;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#btn-receita:hover {
+  background-color: #35c77a;
+}
+
+#btn-despesa {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #ff3100;
+  color: #ffffff;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#btn-despesa:hover {
+  background-color: #e60000;
+}
