@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Receita</title>
+    <link rel="stylesheet" href="src/style/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+</head>
+<body>
+    <nav id="sidebar">
+        <div id="sidebar_content">
+          <div id="user">
+            <img src="src/img/logo.png" alt="foto" id="user_avatar" />
+            <p id="user_info">Lume</p>
+          </div>
+  
+          <ul id="side-items">
+            <li class="side-item">
+              <a href="#">
+                <i class="fa-solid fa-chart-line"></i>
+                <span class="item-description">Dashboard</span>
+              </a>
+            </li>
+  
+            <li class="side-item active">
+              <a href="#">
+                <i class="fa-solid fa-money-check-dollar"></i>
+                <span class="item-description">Nova Receita</span>
+              </a>
+            </li>
+  
+            <li class="side-item">
+              <a href="#">
+                <i class="fa-solid fa-arrow-trend-down"></i>
+                <span class="item-description">Nova Despesa</span>
+              </a>
+            </li>
+  
+            <li class="side-item">
+              <a href="#">
+                <i class="fa-solid fa-money-bill-transfer" id="open_btn_icon"></i>
+                <span class="item-description">Movimentação</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+  
+        <div id="logout">
+          <button id="logout_btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="item-description"> Logout </span>
+          </button>
+        </div>
+    </nav>
+  
+    <main>
+        <section id="cabecalho">
+            <div id="titulo-cabecalho">
+                <button id="btn-voltar">
+                    <i class="fa-solid fa-arrow-left-long"></i>
+                </button>
+                <h1>Nova receita</h1>
+            </div>
+          <p id="subtitulo-cabecalho">Registre uma nova entrada de dinheiro</p>
+        </section>
+
+        <section id="card-nova-receita">
+            <div id="form-receita">
+                <form action="">
+                    <label for="">Valor</label>
+                    <input type="text" placeholder="R$ 0,00" required>
+
+                    <label for="">Data</label>
+                    <input type="date" required>
+
+                    <label for="">Descrição</label>
+                    <input type="text" placeholder="Ex: Salário de Agosto" required>
+
+                    <div id="btn-form">
+                        <button id="btn-cancelar">Cancelar</button>
+                        <button id="btn-salvar">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
