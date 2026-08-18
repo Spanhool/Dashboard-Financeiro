@@ -359,6 +359,13 @@ main {
   margin-top: 35px;
 }
 
+#card-movimentacao {
+  background-color: #161616;
+  border: 1px solid #262626;
+  border-radius: 20px;
+  padding: 20px 15px;
+}
+
 #cabecalho-movimentacao {
   display: flex;
   justify-content: space-between;
@@ -398,7 +405,7 @@ main {
 }
 
 #movimentacao-item-info {
-  display: flex; 
+  display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
@@ -433,7 +440,6 @@ main {
   display: flex;
   align-items: center;
   gap: 30px;
-  margin-right: 40px;
 }
 
 #data {
@@ -454,7 +460,7 @@ main {
   font-weight: 500;
 }
 
-/* TELA NOVA RECEITA */
+/* TELA NOVA RECEITA E NOVA DESPESA */
 
 #titulo-cabecalho {
   color: #ffffff;
@@ -483,14 +489,14 @@ main {
   margin-left: 47px;
 }
 
-#card-nova-receita {
+#card-nova-receita-despesa {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 140px);
 }
 
-#form-receita {
+#form-receita-despesa {
   display: flex;
   justify-content: center;
   background-color: #161616;
@@ -502,13 +508,13 @@ main {
   box-sizing: border-box;
 }
 
-#form-receita form {
+#form-receita-despesa form {
   display: flex;
   flex-direction: column;
   width: 350px;
 }
 
-#form-receita form input {
+#form-receita-despesa form input {
   width: 100%;
   box-sizing: border-box;
   padding: 14px;
@@ -521,12 +527,12 @@ main {
   outline: none;
 }
 
-#form-receita form input:focus {
+#form-receita-despesa form input:focus {
   color: #3f3f41;
   border: 1px solid #353536;
 }
 
-#form-receita label {
+#form-receita-despesa label {
   text-transform: uppercase;
   color: #3f3f41;
   font-weight: 500;
@@ -549,8 +555,16 @@ main {
   color: #79797a;
 }
 
-#btn-salvar {
+#btn-salvar-receita {
   background-color: #3ddc84;
+  padding: 12px;
+  border-radius: 8px;
+  color: #000000;
+  border: none;
+}
+
+#btn-salvar-despesa {
+  background-color: #ff3100;
   padding: 12px;
   border-radius: 8px;
   color: #000000;
