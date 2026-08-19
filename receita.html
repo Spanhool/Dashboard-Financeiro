@@ -70,23 +70,30 @@
 
       <section id="card-nova-receita-despesa">
         <div id="form-receita-despesa">
-          <form action="">
-            <label for="">Valor</label>
-            <input type="text" placeholder="R$ 0,00" required />
+          <form action="" id="form-receita">
+            <label for="valor">Valor</label>
+            <input type="text" id="valor" placeholder="R$ 0,00" required />
 
-            <label for="">Data</label>
-            <input type="date" required />
+            <label for="data">Data</label>
+            <input type="date" id="data" required />
 
-            <label for="">Descrição</label>
-            <input type="text" placeholder="Ex: Salário de Agosto" required />
+            <label for="descricao">Descrição</label>
+            <input
+              type="text"
+              id="descricao"
+              placeholder="Ex: Salário de Agosto"
+              required
+            />
 
             <div id="btn-form">
               <button id="btn-cancelar">Cancelar</button>
-              <button id="btn-salvar-receita">Salvar</button>
+              <button id="btn-salvar-receita" type="submit">Salvar</button>
             </div>
           </form>
         </div>
       </section>
     </main>
+
+    <script src="src/js/receita.js"></script>
   </body>
 </html>

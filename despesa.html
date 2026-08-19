@@ -70,23 +70,30 @@
 
       <section id="card-nova-receita-despesa">
         <div id="form-receita-despesa">
-          <form action="">
-            <label for="">Valor</label>
-            <input type="text" placeholder="R$ 0,00" required />
+          <form action="" id="form-despesa">
+            <label for="valor">Valor</label>
+            <input type="text" id="valor" placeholder="R$ 0,00" required />
 
-            <label for="">Data</label>
-            <input type="date" required />
+            <label for="data">Data</label>
+            <input type="date" id="data" required />
 
-            <label for="">Descrição</label>
-            <input type="text" placeholder="Ex: Supermercado" required />
+            <label for="descricao">Descrição</label>
+            <input
+              type="text"
+              id="descricao"
+              placeholder="Ex: Supermercado"
+              required
+            />
 
             <div id="btn-form">
               <button id="btn-cancelar">Cancelar</button>
-              <button id="btn-salvar-despesa">Salvar</button>
+              <button id="btn-salvar-despesa" type="submit">Salvar</button>
             </div>
           </form>
         </div>
       </section>
     </main>
+
+    <script src="src/js/despesa.js"></script>
   </body>
 </html>

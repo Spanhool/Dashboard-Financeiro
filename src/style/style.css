@@ -450,7 +450,7 @@ main {
   gap: 30px;
 }
 
-#data {
+#movimentacao-item-info-valor .data-movimentacao {
   color: #353536;
   font-size: 14px;
   font-weight: 500;
