@@ -359,6 +359,13 @@ main {
   margin-top: 35px;
 }
 
+#titulo-movimentacao {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
 #card-movimentacao {
   background-color: #161616;
   border: 1px solid #262626;
@@ -437,27 +444,31 @@ main {
 }
 
 #movimentacao-item-info-valor {
-  display: flex;
+  display: grid;
+  grid-template-columns: 90px 110px;
   align-items: center;
   gap: 30px;
 }
 
 #data {
-  color: #eeeeee;
+  color: #353536;
   font-size: 14px;
   font-weight: 500;
+  text-align: right;
 }
 
 #valor-receita-movimentacao {
   color: #3ddc84;
   font-size: 14px;
   font-weight: 500;
+  text-align: right;
 }
 
 #valor-despesa-movimentacao {
   color: #ff3100;
   font-size: 14px;
   font-weight: 500;
+  text-align: right;
 }
 
 /* TELA NOVA RECEITA E NOVA DESPESA */
@@ -569,4 +580,29 @@ main {
   border-radius: 8px;
   color: #000000;
   border: none;
+}
+
+/* TELA MOVIMENTAÇÃO */
+
+#botoes-filtro {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+#botoes-filtro > button {
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: #262626;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+#botoes-filtro > button.active {
+  background-color: #f24405;
+}
+
+#botoes-filtro > button:hover:not(.active) {
+  background-color: #101010;
 }
