@@ -404,14 +404,14 @@ main {
   gap: 10px;
 }
 
-#movimentacao-item {
+.movimentacao-item {
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-#movimentacao-item-info {
+.movimentacao-item-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -419,7 +419,7 @@ main {
   width: 100%;
 }
 
-#movimentacao-item-info-tipo {
+.movimentacao-item-info-tipo {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -429,42 +429,42 @@ main {
   font-weight: 500;
 }
 
-#circulo-receita {
+.circulo {
   width: 10px;
   height: 10px;
   border-radius: 50%;
+}
+
+.circulo.receita {
   background-color: #3ddc84;
 }
 
-#circulo-despesa {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+.circulo.despesa {
   background-color: #ff3100;
 }
 
-#movimentacao-item-info-valor {
+.movimentacao-item-info-valor {
   display: grid;
   grid-template-columns: 90px 110px;
   align-items: center;
   gap: 30px;
 }
 
-#movimentacao-item-info-valor .data-movimentacao {
+.movimentacao-item-info-valor .data-movimentacao {
   color: #353536;
   font-size: 14px;
   font-weight: 500;
   text-align: right;
 }
 
-#valor-receita-movimentacao {
+.valor-movimentacao.receita {
   color: #3ddc84;
   font-size: 14px;
   font-weight: 500;
   text-align: right;
 }
 
-#valor-despesa-movimentacao {
+.valor-movimentacao.despesa {
   color: #ff3100;
   font-size: 14px;
   font-weight: 500;

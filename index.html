@@ -71,7 +71,7 @@
           </div>
 
           <div id="info-card-saldo">
-            <h3>R$ 4.700,00</h3>
+            <h3 id="valor-saldo"></h3>
           </div>
         </div>
       </section>
@@ -84,7 +84,7 @@
           </div>
 
           <div id="info-card-receita">
-            <h3>R$ 5.000,00</h3>
+            <h3 id="valor-receita">R$ 5.000,00</h3>
           </div>
         </div>
 
@@ -95,7 +95,7 @@
           </div>
 
           <div id="info-card-despesa">
-            <h3>R$ 300,00</h3>
+            <h3 id="valor-despesa">R$ 300,00</h3>
           </div>
         </div>
       </section>
@@ -108,28 +108,28 @@
           </div>
 
           <div id="movimentacao-lista">
-            <div id="movimentacao-item">
-              <div id="movimentacao-item-info">
-                <div id="movimentacao-item-info-tipo">
-                  <span id="circulo-receita"></span>
+            <div class="movimentacao-item">
+              <div class="movimentacao-item-info">
+                <div class="movimentacao-item-info-tipo">
+                  <span class="circulo receita"></span>
                   <p>Salário</p>
                 </div>
-                <div id="movimentacao-item-info-valor">
+                <div class="movimentacao-item-info-valor">
                   <span class="data-movimentacao">15/08/2026</span>
-                  <span id="valor-receita-movimentacao">+ R$ 5.000,00</span>
+                  <span class="valor-movimentacao receita">+ R$ 5.000,00</span>
                 </div>
               </div>
             </div>
 
-            <div id="movimentacao-item">
-              <div id="movimentacao-item-info">
-                <div id="movimentacao-item-info-tipo">
-                  <span id="circulo-despesa"></span>
+            <div class="movimentacao-item">
+              <div class="movimentacao-item-info">
+                <div class="movimentacao-item-info-tipo">
+                  <span class="circulo despesa"></span>
                   <p>Fone Bluetooth</p>
                 </div>
-                <div id="movimentacao-item-info-valor">
+                <div class="movimentacao-item-info-valor">
                   <span class="data-movimentacao">12/08/2026</span>
-                  <span id="valor-despesa-movimentacao"> - R$ 300,00</span>
+                  <span class="valor-movimentacao despesa"> - R$ 300,00</span>
                 </div>
               </div>
             </div>
@@ -137,5 +137,7 @@
         </div>
       </section>
     </main>
+
+    <script src="src/js/dashboard.js"></script>
   </body>
 </html>
