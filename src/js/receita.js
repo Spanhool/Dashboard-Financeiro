@@ -17,6 +17,7 @@ form.addEventListener("submit", function (event) {
 
   // Cria um objeto receita com os valores do formulário
   const receita = {
+    id: Date.now(),
     valor: valorNumber,
     tipo: "receita",
     data: data,

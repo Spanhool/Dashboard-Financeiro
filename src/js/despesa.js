@@ -17,6 +17,7 @@ form.addEventListener("submit", function (event) {
 
   // Cria um objeto despesa com os valores do formulário
   const despesa = {
+    id: Date.now(),
     valor: valorNumber,
     tipo: "despesa",
     data: data,
