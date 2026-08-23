@@ -172,6 +172,27 @@
       </section>
     </main>
 
+    <div id="modal-editar-overlay" class="oculto">
+      <div id="modal-editar">
+        <h3>Editar Movimentação</h3>
+        <form id="form-editar-movimentacao">
+          <label for="editar-valor">Valor</label>
+          <input type="text" id="editar-valor" placeholder="R$ 0,00" required />
+
+          <label for="editar-data">Data</label>
+          <input type="date" id="editar-data" required />
+
+          <label for="editar-descricao">Descrição</label>
+          <input type="text" id="editar-descricao" required />
+
+          <div id="btn-form-editar">
+            <button type="button" id="btn-cancelar-editar">Cancelar</button>
+            <button type="submit" id="btn-salvar-editar">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <script src="src/js/movimentacao.js"></script>
   </body>
 </html>

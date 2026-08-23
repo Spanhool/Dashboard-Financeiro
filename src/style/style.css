@@ -472,7 +472,14 @@ main {
   text-align: right;
 }
 
-.btn-excluir-movimentacao {
+.movimentacao-item-acoes {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-excluir-movimentacao,
+.btn-editar-movimentacao {
   background: none;
   border: none;
   cursor: pointer;
@@ -483,6 +490,93 @@ main {
 
 .btn-excluir-movimentacao:hover {
   color: #ff3100;
+}
+
+.btn-editar-movimentacao:hover {
+  color: #3ddc84;
+}
+
+#modal-editar-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+#modal-editar-overlay.oculto {
+  display: none;
+}
+
+#modal-editar {
+  background-color: #161616;
+  border: 1px solid #262626;
+  border-radius: 20px;
+  padding: 24px;
+  width: 350px;
+}
+
+#modal-editar h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+#modal-editar form {
+  display: flex;
+  flex-direction: column;
+}
+
+#modal-editar form input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  border-radius: 8px;
+  background-color: #101010;
+  border: 1px solid #262626;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #eeeeee;
+  outline: none;
+}
+
+#modal-editar form input:focus {
+  color: #3f3f41;
+  border: 1px solid #353536;
+}
+
+#modal-editar label {
+  text-transform: uppercase;
+  color: #3f3f41;
+  font-weight: 500;
+  text-align: left;
+  margin-top: 5px;
+}
+
+#btn-form-editar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+#btn-cancelar-editar {
+  background-color: transparent;
+  border: 1px solid #262626;
+  padding: 12px;
+  border-radius: 8px;
+  color: #79797a;
+  cursor: pointer;
+}
+
+#btn-salvar-editar {
+  background-color: #f24405;
+  padding: 12px;
+  border-radius: 8px;
+  color: #000000;
+  border: none;
+  cursor: pointer;
 }
 
 /* TELA NOVA RECEITA E NOVA DESPESA */
