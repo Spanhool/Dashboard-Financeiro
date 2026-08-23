@@ -88,66 +88,15 @@ container.addEventListener("click", (e) => {
   }
 
   if (btnEditar) {
-    const idParaEditar = parseInt(btnEditar.dataset.id); // Obtém o ID da movimentação a ser editada
+    const idParaEditar = parseInt(btnEditar.dataset.id);
     const item = movimentacao.find((item) => item.id === idParaEditar);
 
-    if (item) {
-      abrirModalEdicao(item);
+    if (item.tipo === "receita") {
+      window.location.href = `receita.html?id=${idParaEditar}`; // Redireciona para a página de edição de receita com o ID da movimentação
+    } else {
+      window.location.href = `despesa.html?id=${idParaEditar}`; // Redireciona para a página de edição de despesa com o ID da movimentação
     }
   }
-});
-
-// Elementos do modal de edição
-const modalOverlay = document.getElementById("modal-editar-overlay");
-const formEditar = document.getElementById("form-editar-movimentacao");
-const inputEditarValor = document.getElementById("editar-valor");
-const inputEditarData = document.getElementById("editar-data");
-const inputEditarDescricao = document.getElementById("editar-descricao");
-const btnCancelarEditar = document.getElementById("btn-cancelar-editar");
-let idEmEdicao = null; // Guarda o ID da movimentação que está sendo editada
-
-function abrirModalEdicao(item) {
-  idEmEdicao = item.id;
-  inputEditarValor.value = item.valor.toFixed(2).replace(".", ",");
-  inputEditarData.value = item.data;
-  inputEditarDescricao.value = item.descricao;
-  modalOverlay.classList.remove("oculto");
-}
-
-function fecharModalEdicao() {
-  modalOverlay.classList.add("oculto");
-  idEmEdicao = null;
-}
-
-btnCancelarEditar.addEventListener("click", fecharModalEdicao);
-
-modalOverlay.addEventListener("click", (e) => {
-  if (e.target === modalOverlay) {
-    fecharModalEdicao();
-  }
-});
-
-formEditar.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const btnFiltroAtivo = document.querySelector("#botoes-filtro button.active");
-
-  const valorNumber = parseFloat(
-    inputEditarValor.value.replace("R$", "").replace(",", ".").trim(),
-  );
-  const data = inputEditarData.value;
-  const descricao = inputEditarDescricao.value;
-
-  movimentacao = movimentacao.map((item) => {
-    if (item.id === idEmEdicao) {
-      return { ...item, valor: valorNumber, data: data, descricao: descricao };
-    }
-    return item;
-  });
-
-  localStorage.setItem("movimentacao", JSON.stringify(movimentacao)); // Atualiza o localStorage com a lista de movimentações atualizada
-  renderizarLista(obterListaFiltrada(btnFiltroAtivo.dataset.filtro)); // Re-renderiza a lista de movimentações
-  fecharModalEdicao();
 });
 
 renderizarLista(obterListaFiltrada(btnFiltroAtivo.dataset.filtro)); // Renderiza a lista de movimentações filtrada pelo botão ativo
