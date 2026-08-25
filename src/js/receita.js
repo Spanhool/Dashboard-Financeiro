@@ -6,6 +6,10 @@ const valorDoParametro = searchParams.get("id");
 
 const movimentacao = JSON.parse(localStorage.getItem("movimentacao")) || [];
 
+const item = movimentacao.find(function (m) {
+  return m.id === parseInt(valorDoParametro);
+});
+
 // Adiciona um evento de envio ao formulário
 form.addEventListener("submit", function (event) {
   event.preventDefault();
