@@ -1,5 +1,10 @@
 const form = document.getElementById("form-receita"); // Variavel para armazenar o formulário
 const btnCancelar = document.getElementById("btn-cancelar"); // Variavel para armazenar o botão cancelar
+const paginaReceita = window.location.search;
+const searchParams = new URLSearchParams(paginaReceita);
+const valorDoParametro = searchParams.get("id");
+
+const movimentacao = JSON.parse(localStorage.getItem("movimentacao")) || [];
 
 // Adiciona um evento de envio ao formulário
 form.addEventListener("submit", function (event) {
