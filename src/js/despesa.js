@@ -1,5 +1,25 @@
 const form = document.getElementById("form-despesa"); // Variavel para armazenar o formulário
 const btnCancelar = document.getElementById("btn-cancelar"); // Variavel para armazenar o botão cancelar
+const paginaReceita = window.location.search;
+const searchParams = new URLSearchParams(paginaReceita);
+const valorDoParametro = searchParams.get("id");
+
+const movimentacao = JSON.parse(localStorage.getItem("movimentacao")) || [];
+
+const item = movimentacao.find(function (m) {
+  return m.id === parseInt(valorDoParametro);
+});
+
+if (item != null) {
+  let valor = document.getElementById("valor");
+  valor.value = item.valor;
+
+  let data = document.getElementById("data");
+  data.value = item.data;
+
+  let descricao = document.getElementById("descricao");
+  descricao.value = item.descricao;
+}
 
 // Adiciona um evento de envio ao formulário
 form.addEventListener("submit", function (event) {
@@ -15,23 +35,35 @@ form.addEventListener("submit", function (event) {
 
   let descricao = document.getElementById("descricao").value;
 
-  // Cria um objeto despesa com os valores do formulário
-  const despesa = {
-    id: Date.now(),
-    valor: valorNumber,
-    tipo: "despesa",
-    data: data,
-    descricao: descricao,
-  };
+  if (item) {
+    item.valor = valorNumber;
+    item.data = data;
+    item.descricao = descricao;
 
-  // Recupera a lista de movimentações do localStorage, ou cria uma nova lista vazia se não existir
-  const movimentacao = JSON.parse(localStorage.getItem("movimentacao") || "[]");
-  // Adiciona a nova despesa à lista de movimentações
-  movimentacao.push(despesa);
-  // Salva a lista de movimentações atualizada no localStorage
-  localStorage.setItem("movimentacao", JSON.stringify(movimentacao));
-  // Redireciona para a página index.html
-  window.location.href = "index.html";
+    localStorage.setItem("movimentacao", JSON.stringify(movimentacao));
+
+    window.location.href = "index.html";
+  } else {
+    // Cria um objeto despesa com os valores do formulário
+    const despesa = {
+      id: Date.now(),
+      valor: valorNumber,
+      tipo: "despesa",
+      data: data,
+      descricao: descricao,
+    };
+
+    // Recupera a lista de movimentações do localStorage, ou cria uma nova lista vazia se não existir
+    const movimentacao = JSON.parse(
+      localStorage.getItem("movimentacao") || "[]",
+    );
+    // Adiciona a nova despesa à lista de movimentações
+    movimentacao.push(despesa);
+    // Salva a lista de movimentações atualizada no localStorage
+    localStorage.setItem("movimentacao", JSON.stringify(movimentacao));
+    // Redireciona para a página index.html
+    window.location.href = "index.html";
+  }
 });
 
 // Adiciona um evento de click ao botão cancelar para redirecionar para a página index.html
