@@ -1,7 +1,7 @@
 const form = document.getElementById("form-despesa"); // Variavel para armazenar o formulário
 const btnCancelar = document.getElementById("btn-cancelar"); // Variavel para armazenar o botão cancelar
-const paginaReceita = window.location.search;
-const searchParams = new URLSearchParams(paginaReceita);
+const paginaDespesa = window.location.search;
+const searchParams = new URLSearchParams(paginaDespesa);
 const valorDoParametro = searchParams.get("id");
 
 const movimentacao = JSON.parse(localStorage.getItem("movimentacao")) || [];
