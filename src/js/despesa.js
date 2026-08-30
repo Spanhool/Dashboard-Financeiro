@@ -23,7 +23,7 @@ if (item != null) {
 }
 
 inputValor.addEventListener("input", function (valorParaAjustar) {
-  let valorAjustado = parseFloat(inputValor.value.replace(/|D/g, "")) / 100;
+  let valorAjustado = parseFloat(inputValor.value.replace(/\D/g, "")) / 100;
 
   let valorConvertido = valorAjustado.toLocaleString("pt-BR", {
     style: "currency",
