@@ -78,7 +78,7 @@ form.addEventListener("submit", function (event) {
   }
 });
 
-// Adiciona um evento de click ao botão cancelar para redirecionar para a página index.html
+// Adiciona um evento de click ao botão cancelar para redirecionar para a página index.html .
 btnCancelar.addEventListener("click", function () {
   window.location.href = "index.html";
 });
