@@ -81,13 +81,19 @@ container.addEventListener("click", (e) => {
   const btnFiltroAtivo = document.querySelector("#botoes-filtro button.active");
 
   if (btnExcluir) {
-    const idParaExcluir = parseInt(btnExcluir.dataset.id); // Obtém o ID da movimentação a ser excluída
-    movimentacao = movimentacao.filter((item) => {
-      return item.id !== idParaExcluir; // Filtra a lista de movimentações, removendo a que tem o ID correspondente
-    });
+    const confirmou = window.confirm(
+      "Tem certeza que deseja excluir esta movimentação?",
+    );
 
-    localStorage.setItem("movimentacao", JSON.stringify(movimentacao)); // Atualiza o localStorage com a lista de movimentações atualizada
-    renderizarLista(obterListaFiltrada(btnFiltroAtivo.dataset.filtro)); // Re-renderiza a lista de movimentações
+    if (confirmou) {
+      const idParaExcluir = parseInt(btnExcluir.dataset.id); // Obtém o ID da movimentação a ser excluída
+      movimentacao = movimentacao.filter((item) => {
+        return item.id !== idParaExcluir; // Filtra a lista de movimentações, removendo a que tem o ID correspondente
+      });
+
+      localStorage.setItem("movimentacao", JSON.stringify(movimentacao)); // Atualiza o localStorage com a lista de movimentações atualizada
+      renderizarLista(obterListaFiltrada(btnFiltroAtivo.dataset.filtro)); // Re-renderiza a lista de movimentações
+    }
   }
 
   if (btnEditar) {
@@ -112,4 +118,4 @@ if (valorDoParametro) {
   btnFiltroNovo.classList.add("active"); // Adiciona a classe "active" ao botão correspondente ao filtro do parâmetro da URL
 }
 
-renderizarLista(obterListaFiltrada(valorDoParametro)); // Renderiza a lista de movimentações filtrada pelo botão ativo
+renderizarLista(obterListaFiltrada(valorDoParametro || "todas")); // Renderiza a lista de movimentações filtrada pelo botão ativo
