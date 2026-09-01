@@ -2,6 +2,9 @@ let movimentacao = JSON.parse(localStorage.getItem("movimentacao") || "[]"); // 
 const container = document.getElementById("movimentacao-lista"); // Seleciona a lista de movimentacoes
 const btnFiltro = document.querySelectorAll("#botoes-filtro button");
 const btnFiltroAtivo = document.querySelector("#botoes-filtro button.active");
+const paginaMovimentacao = window.location.search;
+const searchParams = new URLSearchParams(paginaMovimentacao);
+const valorDoParametro = searchParams.get("filtro");
 
 function formatarData(data) {
   const partesData = data.split("-"); // Divide a data em partes (ano, mês, dia)
@@ -99,4 +102,14 @@ container.addEventListener("click", (e) => {
   }
 });
 
-renderizarLista(obterListaFiltrada(btnFiltroAtivo.dataset.filtro)); // Renderiza a lista de movimentações filtrada pelo botão ativo
+if (valorDoParametro) {
+  const btnFiltroAtivo = document.querySelector("#botoes-filtro button.active");
+  btnFiltroAtivo.classList.remove("active"); // Remove a classe "active" do botão ativo atual
+
+  const btnFiltroNovo = document.querySelector(
+    `#botoes-filtro button[data-filtro="${valorDoParametro}"]`,
+  );
+  btnFiltroNovo.classList.add("active"); // Adiciona a classe "active" ao botão correspondente ao filtro do parâmetro da URL
+}
+
+renderizarLista(obterListaFiltrada(valorDoParametro)); // Renderiza a lista de movimentações filtrada pelo botão ativo
