@@ -8,7 +8,7 @@ Aplicação web simples para controle financeiro pessoal, com registro de receit
 - **Cadastro de receitas** com valor, data e descrição.
 - **Cadastro de despesas** com valor, data e descrição.
 - **Edição e exclusão** de movimentações já cadastradas.
-- **Histórico completo** de movimentações, com filtro por tipo (todas, receitas ou despesas).
+- **Histórico completo** de movimentações, com filtro por tipo (todas, receitas ou despesas)
 
 ## Tecnologias
 
