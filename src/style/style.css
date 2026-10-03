@@ -512,8 +512,15 @@ main {
   outline: none;
 }
 
+#modal-editar form input[type="date"],
+#form-receita-despesa form input[type="date"] {
+  color-scheme: dark;
+  accent-color: #f5a623;
+  cursor: pointer;
+}
+
 #modal-editar form input:focus {
-  color: #3f3f41;
+  color: #eeeeee;
   border: 1px solid #353536;
 }
 
@@ -623,7 +630,7 @@ main {
 }
 
 #form-receita-despesa form input:focus {
-  color: #3f3f41;
+  color: #eeeeee;
   border: 1px solid #353536;
 }
 
