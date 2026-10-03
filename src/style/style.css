@@ -514,6 +514,14 @@ main {
 
 #modal-editar form input[type="date"],
 #form-receita-despesa form input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  inline-size: 100%;
+  min-inline-size: 0;
+  max-inline-size: 100%;
   color-scheme: dark;
   accent-color: #f5a623;
   cursor: pointer;
