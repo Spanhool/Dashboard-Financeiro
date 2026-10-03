@@ -327,7 +327,7 @@ main {
   background-color: #1e1e1e;
   border: 1px solid #2a2a2a;
   border-radius: 20px;
-  padding: 20px 15px;
+  padding: 20px;
 }
 
 #cabecalho-movimentacao {
@@ -361,29 +361,39 @@ main {
 }
 
 .movimentacao-item {
-  padding: 10px;
-  display: flex;
+  padding: 14px 10px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+  gap: 20px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.movimentacao-item:last-child {
+  border-bottom: none;
 }
 
 .movimentacao-item-info {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, auto);
   align-items: center;
-  gap: 10px;
-  width: 100%;
+  gap: 20px;
+  min-width: 0;
 }
 
 .movimentacao-item-info-tipo {
   display: flex;
   align-items: center;
-  flex-direction: row;
   gap: 10px;
   font-size: 14px;
   color: #ffffff;
   font-weight: 500;
+  min-width: 0;
+}
+
+.movimentacao-item-info-tipo p {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .circulo {
@@ -402,9 +412,9 @@ main {
 
 .movimentacao-item-info-valor {
   display: grid;
-  grid-template-columns: 90px 110px;
+  grid-template-columns: 88px minmax(130px, auto);
   align-items: center;
-  gap: 30px;
+  gap: clamp(10px, 2vw, 24px);
 }
 
 .movimentacao-item-info-valor .data-movimentacao {
@@ -431,7 +441,7 @@ main {
 .movimentacao-item-acoes {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 14px;
 }
 
 .btn-excluir-movimentacao,
@@ -669,4 +679,252 @@ main {
 
 #botoes-filtro > button:hover:not(.active) {
   background-color: #101010;
+}
+
+@media (max-width: 1024px) {
+  #cards-resumo {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #card-receita,
+  #card-despesa {
+    width: min(100%, 420px);
+  }
+
+  #form-receita-despesa {
+    width: min(100%, 520px);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --mobile-nav-height: 72px;
+  }
+
+  body {
+    display: block;
+    overflow-x: hidden;
+  }
+
+  main {
+    margin-left: 0;
+    padding: calc(var(--mobile-nav-height) + 18px) 16px 32px;
+  }
+
+  #sidebar {
+    width: 100%;
+    height: var(--mobile-nav-height);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-right: none;
+    border-bottom: 1px solid #262626;
+    border-radius: 0 0 18px 18px;
+    padding: 10px 14px;
+    z-index: 20;
+  }
+
+  #sidebar_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  #user {
+    margin: 0;
+    flex: 0 0 auto;
+  }
+
+  #user_avatar {
+    width: 42px;
+    height: 42px;
+  }
+
+  #side-items {
+    flex-direction: row;
+    justify-content: center;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .side-item {
+    padding: 10px 8px;
+    flex: 1;
+    max-width: 56px;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .side-item a {
+    justify-content: center;
+  }
+
+  #logout {
+    border-top: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  #logout_btn {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  #cabecalho h1 {
+    font-size: 26px;
+    margin-top: 0;
+  }
+
+  #cabecalho > p,
+  #subtitulo-cabecalho {
+    margin-left: 0;
+  }
+
+  #card {
+    min-height: 120px;
+    height: auto;
+    padding: 18px 0;
+  }
+
+  #cabecalho-card-saldo > i,
+  #cabecalho-card-saldo > h1,
+  #info-card-saldo {
+    margin-left: 20px;
+  }
+
+  #botoes-filtro {
+    flex-wrap: wrap;
+  }
+
+  #botoes-filtro > button {
+    flex: 1 1 32%;
+    min-width: 100px;
+  }
+
+  #movimentacao-lista {
+    gap: 0;
+  }
+
+  .movimentacao-item {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 10px;
+    row-gap: 8px;
+    padding: 14px 8px;
+  }
+
+  .movimentacao-item-info {
+    display: contents;
+  }
+
+  .movimentacao-item-info-tipo {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .movimentacao-item-info-valor {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    grid-template-columns: minmax(72px, 1fr) auto;
+    gap: 12px;
+  }
+
+  .movimentacao-item-acoes {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  #card-nova-receita-despesa {
+    min-height: auto;
+    padding-top: 12px;
+  }
+
+  #form-receita-despesa {
+    width: 100%;
+    height: auto;
+    padding: 18px 14px 20px;
+  }
+
+  #form-receita-despesa form {
+    width: 100%;
+  }
+
+  #btn-form {
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  #btn-form > button {
+    flex: 1 1 140px;
+  }
+
+  #modal-editar {
+    width: min(90vw, 360px);
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: calc(var(--mobile-nav-height) + 16px) 12px 24px;
+  }
+
+  #cabecalho h1 {
+    font-size: 24px;
+  }
+
+  #cabecalho > p {
+    font-size: 14px;
+  }
+
+  #cards-resumo {
+    margin-top: 24px;
+  }
+
+  #card-receita,
+  #card-despesa {
+    width: 100%;
+    height: 150px;
+  }
+
+  #cabecalho-card-receita,
+  #cabecalho-card-despesa {
+    margin-left: 20px;
+  }
+
+  #info-card-receita,
+  #info-card-despesa {
+    font-size: 24px;
+  }
+
+  #btn-receita-despesa {
+    flex-direction: column;
+    margin-top: 28px;
+  }
+
+  #botoes-filtro > button {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 10px 8px;
+  }
+
+  .movimentacao-item-info-valor .data-movimentacao,
+  .valor-movimentacao.receita,
+  .valor-movimentacao.despesa {
+    font-size: 12px;
+  }
+
+  #card-movimentacao {
+    padding: 12px 10px;
+  }
 }
