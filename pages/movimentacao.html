@@ -1,0 +1,133 @@
+<section id="cabecalho">
+  <div id="titulo-cabecalho">
+    <button id="btn-voltar">
+      <i class="fa-solid fa-arrow-left-long"></i>
+    </button>
+    <h1>Movimentação</h1>
+  </div>
+  <p id="subtitulo-cabecalho">Veja todo o seu histórico financeiro</p>
+</section>
+
+<section id="movimentacao">
+  <div id="botoes-filtro">
+    <button class="active" data-filtro="todas">Todas</button>
+    <button data-filtro="receita">Receitas</button>
+    <button data-filtro="despesa">Despesas</button>
+  </div>
+
+  <div id="card-movimentacao">
+    <div id="movimentacao-lista">
+      <div class="movimentacao-item">
+        <div class="movimentacao-item-info">
+          <div class="movimentacao-item-info-tipo">
+            <span class="circulo receita"></span>
+            <p>Salário</p>
+          </div>
+          <div class="movimentacao-item-info-valor">
+            <span class="data-movimentacao">15/08/2026</span>
+            <span class="valor-movimentacao receita">+ R$ 5.000,00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="movimentacao-item">
+        <div class="movimentacao-item-info">
+          <div class="movimentacao-item-info-tipo">
+            <span class="circulo despesa"></span>
+            <p>Fone Bluetooth</p>
+          </div>
+          <div class="movimentacao-item-info-valor">
+            <span class="data-movimentacao">12/08/2026</span>
+            <span class="valor-movimentacao despesa"> - R$ 3000,00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="movimentacao-item">
+        <div class="movimentacao-item-info">
+          <div class="movimentacao-item-info-tipo">
+            <span class="circulo despesa"></span>
+            <p>Supermercado</p>
+          </div>
+          <div class="movimentacao-item-info-valor">
+            <span class="data-movimentacao">09/08/2026</span>
+            <span class="valor-movimentacao despesa"> - R$ 450,00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="movimentacao-item">
+        <div class="movimentacao-item-info">
+          <div class="movimentacao-item-info-tipo">
+            <span class="circulo despesa"></span>
+            <p>Aluguel</p>
+          </div>
+          <div class="movimentacao-item-info-valor">
+            <span class="data-movimentacao">08/08/2026</span>
+            <span class="valor-movimentacao despesa"> - R$ 1.200,00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="movimentacao-item">
+        <div class="movimentacao-item-info">
+          <div class="movimentacao-item-info-tipo">
+            <span class="circulo despesa"></span>
+            <p>Internet</p>
+          </div>
+          <div class="movimentacao-item-info-valor">
+            <span class="data-movimentacao">03/08/2026</span>
+            <span class="valor-movimentacao despesa"> - R$ 120,00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="movimentacao-item">
+        <div class="movimentacao-item-info">
+          <div class="movimentacao-item-info-tipo">
+            <span class="circulo receita"></span>
+            <p>FreeLance</p>
+          </div>
+          <div class="movimentacao-item-info-valor">
+            <span class="data-movimentacao">12/08/2026</span>
+            <span class="valor-movimentacao receita"> + R$ 800,00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="movimentacao-item">
+        <div class="movimentacao-item-info">
+          <div class="movimentacao-item-info-tipo">
+            <span class="circulo receita"></span>
+            <p>Venda de usado</p>
+          </div>
+          <div class="movimentacao-item-info-valor">
+            <span class="data-movimentacao">12/08/2026</span>
+            <span class="valor-movimentacao receita"> + R$ 300,00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="modal-editar-overlay" class="oculto">
+  <div id="modal-editar">
+    <h3>Editar Movimentação</h3>
+    <form id="form-editar-movimentacao">
+      <label for="editar-valor">Valor</label>
+      <input type="text" id="editar-valor" placeholder="R$ 0,00" required />
+
+      <label for="editar-data">Data</label>
+      <input type="date" id="editar-data" lang="pt-BR" required />
+
+      <label for="editar-descricao">Descrição</label>
+      <input type="text" id="editar-descricao" required />
+
+      <div id="btn-form-editar">
+        <button type="button" id="btn-cancelar-editar">Cancelar</button>
+        <button type="submit" id="btn-salvar-editar">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
