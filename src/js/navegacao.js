@@ -1,6 +1,7 @@
 const app = document.getElementById("app");
 
 async function navegar(pagina, id = null, filtro = null) {
+  selecionarPagina(pagina);
   const parametros = new URLSearchParams();
 
   if (id) {
@@ -96,5 +97,21 @@ app.addEventListener("click", (event) => {
   event.preventDefault();
   navegar(link.dataset.page, null, link.dataset.filtro || null);
 });
+
+function selecionarPagina(pagina) {
+  const itens = document.querySelectorAll(".side-item");
+
+  itens.forEach((item) => {
+    item.classList.remove("active");
+  });
+
+  const itemSelecionado = document.querySelector(
+    `.side-item a[data-page="${pagina}"]`,
+  );
+
+  if (itemSelecionado) {
+    itemSelecionado.parentElement.classList.add("active");
+  }
+}
 
 navegar("dashboard");
