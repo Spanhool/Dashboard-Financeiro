@@ -1,8 +1,18 @@
 const app = document.getElementById("app");
 
-async function navegar(pagina, id = null) {
-  const parametro = id ? `?id=${id}` : "";
-  history.pushState(null, "", `index.html${parametro}`);
+async function navegar(pagina, id = null, filtro = null) {
+  const parametros = new URLSearchParams();
+
+  if (id) {
+    parametros.set("id", id);
+  }
+
+  if (filtro) {
+    parametros.set("filtro", filtro);
+  }
+
+  const query = parametros.toString();
+  history.pushState(null, "", `index.html${query ? `?${query}` : ""}`);
   const resposta = await fetch(`pages/${pagina}.html`);
   const html = await resposta.text();
 
@@ -74,6 +84,17 @@ document.querySelectorAll("[data-page]").forEach((link) => {
 
     navegar(pagina);
   });
+});
+
+app.addEventListener("click", (event) => {
+  const link = event.target.closest("a[data-page]");
+
+  if (!link) {
+    return;
+  }
+
+  event.preventDefault();
+  navegar(link.dataset.page, null, link.dataset.filtro || null);
 });
 
 navegar("dashboard");
